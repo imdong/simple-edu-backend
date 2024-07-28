@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
 
         // 添加教师时需要更新的
         $this->call(TeacherSeeder::class);
+        $this->call(StudentSeeder::class);
     }
 }

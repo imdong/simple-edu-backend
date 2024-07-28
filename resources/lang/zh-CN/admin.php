@@ -105,4 +105,5 @@ return [
     'quick_create'           => '快速创建',
 
     'teacher'                => '教师',
+    'student'                => '学生',
 ];

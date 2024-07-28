@@ -106,4 +106,5 @@ return [
     'quick_create'           => 'Quick create',
 
     'teacher'                => 'Teacher',
+    'student'                => 'Student',
 ];
