@@ -6,6 +6,8 @@
     "type": "project",
     "require": {
         "php": "^7.3",
+        "ext-pdo_pgsql": "*",
+        "doctrine/dbal": "^2",
         "encore/laravel-admin": "1.*",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
