@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Scopes\AdminUserScope;
 use Encore\Admin\Auth\Database\Administrator;

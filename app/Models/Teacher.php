@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Scopes\TeacherScope;
-use Encore\Admin\Auth\Database\Role;
-use Encore\Admin\Auth\Database\Permission;
 use Encore\Admin\Auth\Database\Administrator;
+use Encore\Admin\Auth\Database\Permission;
+use Encore\Admin\Auth\Database\Role;
 
 /**
  * 教师表

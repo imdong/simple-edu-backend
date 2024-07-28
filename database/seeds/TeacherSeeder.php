@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use Encore\Admin\Auth\Database\Menu;
 use Encore\Admin\Auth\Database\Permission;
 use Encore\Admin\Auth\Database\Role;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
 class TeacherSeeder extends Seeder
@@ -35,7 +35,7 @@ class TeacherSeeder extends Seeder
         $role->permissions()->save(Permission::whereIn('slug', ['dashboard'])->first());
 
         // 添加一个用户
-        \App\Teacher::create([
+        \App\Models\Teacher::create([
             'username' => 'teacher',
             'password' => Hash::make('teacher'),
             'name' => 'Teacher',

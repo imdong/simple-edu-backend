@@ -177,7 +177,7 @@ return [
 
         // User tables and model.
         'users_table' => 'admin_users',
-        'users_model' => \App\AdminUser::class,
+        'users_model' => \App\Models\AdminUser::class,
 
         // Role table and model.
         'roles_table' => 'admin_roles',
