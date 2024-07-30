@@ -47,5 +47,8 @@ class StudentSeeder extends Seeder
             'password' => Hash::make('student'),
             'name' => 'Student',
         ]);
+
+        // 添加 200 个学生
+        factory(App\Models\Student::class, 200)->create();
     }
 }

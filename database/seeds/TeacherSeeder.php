@@ -34,13 +34,6 @@ class TeacherSeeder extends Seeder
         // 给角色添加权限
         $role->permissions()->save(Permission::whereIn('slug', ['dashboard'])->first());
 
-        // 添加一个用户
-        \App\Models\Teacher::create([
-            'username' => 'teacher',
-            'password' => Hash::make('teacher'),
-            'name' => 'Teacher',
-        ]);
-
         // 添加菜单
         Menu::insert([
             [
@@ -53,5 +46,15 @@ class TeacherSeeder extends Seeder
         ]);
 
         Menu::where('uri', '/teachers')->first()->roles()->save(Role::where('slug', 'administrator')->first());
+
+        // 添加一个用户
+        \App\Models\Teacher::create([
+            'username' => 'teacher',
+            'password' => Hash::make('teacher'),
+            'name' => 'Teacher',
+        ]);
+
+        // 添加 50 个老师
+        factory(App\Models\Teacher::class, 50)->create();
     }
 }
