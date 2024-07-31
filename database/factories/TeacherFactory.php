@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use Faker\Generator as Faker;
 $factory->define(\App\Models\Teacher::class, function (Faker $faker) {
     return [
         'username' => $faker->userName,
-        'password' => '$2y$10$9qk6J0.O.oVFAvSLzNOCnePRtvsYXLlrNe5fPCiQ2JdXiI2k9HIea', // teacher
+        'password' => Hash::make('teacher'), // teacher
         'name' => $faker->name,
         'type' => 'teacher',
     ];

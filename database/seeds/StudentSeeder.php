@@ -43,6 +43,13 @@ class StudentSeeder extends Seeder
 
         // 添加一个用户
         \App\Models\Student::create([
+            'username' => 'test',
+            'password' => Hash::make('student'),
+            'name' => 'Student',
+        ]);
+
+        // 添加一个用户
+        \App\Models\Student::create([
             'username' => 'student',
             'password' => Hash::make('student'),
             'name' => 'Student',
