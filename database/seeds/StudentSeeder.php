@@ -45,7 +45,7 @@ class StudentSeeder extends Seeder
         \App\Models\Student::create([
             'username' => 'test',
             'password' => Hash::make('student'),
-            'name' => 'Student',
+            'name' => 'Test',
         ]);
 
         // 添加一个用户
