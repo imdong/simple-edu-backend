@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Hash;
 $factory->define(App\Models\Student::class, function (Faker $faker) {
     return [
         'username' => $faker->userName,
-        'password' => Hash::make('student'), // student
-        'name' => $faker->name,
+        'password' => '$2y$10$d8kUk/vXSbnL2yBNBhI8pe1J6X9ShVA8IUnpJxgz.SFwP11z4/6PK', // student
+        'name'     => $faker->name,
     ];
 });
