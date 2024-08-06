@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Encore\Admin\Auth\Database\HasPermissions;
 use Encore\Admin\Traits\DefaultDatetimeFormat;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -18,7 +17,6 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     use Authenticatable;
-    use HasPermissions;
     use DefaultDatetimeFormat;
 
     protected $fillable = [

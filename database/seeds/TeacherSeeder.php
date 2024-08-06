@@ -16,14 +16,14 @@ class TeacherSeeder extends Seeder
     public function run()
     {
         // 添加了一些权限
-        Permission::insert([
-            [
-                'name' => 'Teacher',
-                'slug' => 'teacher',
-                'http_method' => '',
-                'http_path' => '/teachers*',
-            ],
+        $permission = new Permission([
+            'name'        => 'Teacher',
+            'slug'        => 'teacher',
+            'http_method' => '',
+            'http_path'   => '/teachers*',
         ]);
+        $permission->save();
+        Role::first()->permissions()->save($permission);
 
         // 添加角色
         $role = Role::create([
@@ -38,10 +38,10 @@ class TeacherSeeder extends Seeder
         Menu::insert([
             [
                 'parent_id' => 0,
-                'order' => 8,
-                'title' => 'Teacher',
-                'icon' => 'fa-user-secret',
-                'uri' => '/teachers',
+                'order'     => 8,
+                'title'     => 'Teacher',
+                'icon'      => 'fa-user-secret',
+                'uri'       => '/teachers',
             ],
         ]);
 
@@ -51,7 +51,7 @@ class TeacherSeeder extends Seeder
         \App\Models\Teacher::create([
             'username' => 'teacher',
             'password' => Hash::make('teacher'),
-            'name' => 'Teacher',
+            'name'     => 'Teacher',
         ]);
 
         // 添加 50 个老师

@@ -16,43 +16,42 @@ class StudentSeeder extends Seeder
     public function run()
     {
         // 添加了一些权限
-        Permission::insert([
-            [
-                'name' => 'Student',
-                'slug' => 'student',
-                'http_method' => '',
-                'http_path' => '/students*',
-            ],
+        $permission = new Permission([
+            'name'        => 'Student',
+            'slug'        => 'student',
+            'http_method' => '',
+            'http_path'   => '/students*',
         ]);
+        $permission->save();
 
         // 添加菜单
         Menu::insert([
             [
                 'parent_id' => 0,
-                'order' => 9,
-                'title' => 'Student',
-                'icon' => 'fa-user',
-                'uri' => '/students',
+                'order'     => 9,
+                'title'     => 'Student',
+                'icon'      => 'fa-user',
+                'uri'       => '/students',
             ],
         ]);
 
         // 给 Teacher 添加权限 和 菜单
         $teacher_role = Role::where('slug', 'teacher')->first();
-        $teacher_role->permissions()->save(Permission::whereIn('slug', ['student'])->first());
+        $teacher_role->permissions()->save($permission);
         Menu::where('uri', '/students')->first()->roles()->save($teacher_role);
 
         // 添加一个用户
         \App\Models\Student::create([
             'username' => 'test',
             'password' => Hash::make('student'),
-            'name' => 'Test',
+            'name'     => 'Test',
         ]);
 
         // 添加一个用户
         \App\Models\Student::create([
             'username' => 'student',
             'password' => Hash::make('student'),
-            'name' => 'Student',
+            'name'     => 'Student',
         ]);
 
         // 添加 200 个学生
